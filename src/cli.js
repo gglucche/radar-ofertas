@@ -8,7 +8,8 @@ import { buscarProduto, formatarBuscaTexto, formatarBuscaHtml, interpretarVigia 
 import { listarTodasVigias } from './comandos.js';
 import { exportarSite } from './site.js';
 import { chaveVigia, formataPreco as fmt } from './normalize.js';
-import { dormir, log } from './util.js';
+import { dormir, log, descreverErro } from './util.js';
+import { FONTES } from './sources/index.js';
 
 const AJUDA = `radar-ofertas — varre sites de ofertas e avisa quando algo está anormalmente barato
 
@@ -20,6 +21,7 @@ const AJUDA = `radar-ofertas — varre sites de ofertas e avisa quando algo est�
   loop [minutos]                 varre continuamente (padrão 15 min) — para VPS/Docker
   site                           regera docs/dados.json
   status                         estatísticas do banco
+  diagnostico                    testa cada fonte e mostra erros (útil no GitHub Actions)
   testar-telegram                envia mensagem de teste
 `;
 
@@ -85,6 +87,19 @@ try {
     case 'status':
       console.log(estatisticas(db));
       break;
+    case 'diagnostico': {
+      for (const [n, f] of Object.entries(FONTES)) {
+        const t0 = Date.now();
+        try {
+          const lista = await f.varrer({ paginas: 1 });
+          const b = await f.buscar('ssd');
+          console.log(`✅ ${n}: varrer=${lista.length} buscar=${b.length} (${Date.now() - t0}ms) ex.: ${lista[0]?.titulo?.slice(0, 50) ?? '-'} ${fmt(lista[0]?.preco)}`);
+        } catch (e) {
+          console.log(`❌ ${n}: ${descreverErro(e)} (${Date.now() - t0}ms)`);
+        }
+      }
+      break;
+    }
     case 'testar-telegram': {
       if (!tg.ativo) throw new Error('defina TELEGRAM_BOT_TOKEN e TELEGRAM_CHAT_ID');
       await tg.enviar('✅ <b>Radar de Ofertas</b> conectado. Mande /ajuda.');

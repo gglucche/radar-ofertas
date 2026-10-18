@@ -1,12 +1,34 @@
 // Utilidades compartilhadas: download com retry, log, tempo.
 export const UA =
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
+
+// Cabeçalhos parecidos com os de um navegador real (alguns sites filtram por eles).
+const CABECALHOS_NAVEGADOR = {
+  'user-agent': UA,
+  'accept-language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
+  'sec-ch-ua': '"Chromium";v="130", "Google Chrome";v="130", "Not?A_Brand";v="99"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Windows"',
+  'sec-fetch-dest': 'document',
+  'sec-fetch-mode': 'navigate',
+  'sec-fetch-site': 'none',
+  'sec-fetch-user': '?1',
+  'upgrade-insecure-requests': '1',
+  'cache-control': 'no-cache',
+  pragma: 'no-cache',
+};
 
 export const agora = () => new Date().toISOString();
 export const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export function log(...args) {
   console.log(new Date().toISOString().slice(11, 19), ...args);
+}
+
+/** Mensagem de erro útil (undici esconde a causa em e.cause). */
+export function descreverErro(e) {
+  const causa = e?.cause?.code || e?.cause?.message;
+  return causa ? `${e.message} (${causa})` : e?.message || String(e);
 }
 
 /**
@@ -24,16 +46,19 @@ export async function baixar(url, { tipo = 'text', tentativas = 2, timeoutMs = 2
         signal: ctrl.signal,
         redirect: 'follow',
         headers: {
-          'user-agent': UA,
-          'accept-language': 'pt-BR,pt;q=0.9,en;q=0.5',
-          accept: tipo === 'json' ? 'application/json' : 'text/html,application/xhtml+xml,*/*;q=0.8',
+          ...CABECALHOS_NAVEGADOR,
+          accept: tipo === 'json' ? 'application/json, text/plain, */*' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+          ...(tipo === 'json' ? { 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'same-site' } : {}),
           ...headers,
         },
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status} em ${url}`);
+      if (!res.ok) {
+        const mit = res.headers.get('cf-mitigated');
+        throw new Error(`HTTP ${res.status}${mit ? ` (cloudflare ${mit})` : ''} em ${url}`);
+      }
       return tipo === 'json' ? await res.json() : await res.text();
     } catch (e) {
-      erro = e;
+      erro = e.name === 'AbortError' ? new Error(`timeout de ${timeoutMs}ms em ${url}`) : new Error(descreverErro(e).includes(url) ? descreverErro(e) : `${descreverErro(e)} em ${url}`);
       if (i + 1 < tentativas) await dormir(800 * (i + 1));
     } finally {
       clearTimeout(timer);

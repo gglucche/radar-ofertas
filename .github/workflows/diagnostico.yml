@@ -1,0 +1,27 @@
+name: diagnostico
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Fontes via Node (mesmo código da varredura)
+        run: node src/cli.js diagnostico
+      - name: Fontes via curl (status, IP, cabeçalhos)
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+          for u in "https://www.pelando.com.br/recentes" "https://gatry.com/promocoes" "https://api.promobit.com.br/offers" "https://servicespub.prod.api.aws.grupokabum.com.br/catalog/v2/products?query=ssd&page_size=1"; do
+            echo "== $u"
+            curl -sS -D /tmp/h -o /tmp/b -w "http %{http_code} ip %{remote_ip} tempo %{time_total}s bytes %{size_download}\n" -A "$UA" -H "accept-language: pt-BR,pt;q=0.9" --max-time 30 "$u" || echo "curl falhou: $?"
+            grep -iE "^(server|cf-ray|cf-mitigated|location|content-type):" /tmp/h || true
+            head -c 200 /tmp/b | tr '\n' ' '; echo
+          done
