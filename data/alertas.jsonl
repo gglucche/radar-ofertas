@@ -1,17 +1,17 @@
-{"id":1,"oferta_id":3,"motivo":"desconto","detalhe":"60% de desconto (de R$ 1.599,00)","prioridade":2,"preco":640,"criado_em":"2026-10-18T20:42:38.843Z","enviado_em":null}
-{"id":2,"oferta_id":24,"motivo":"desconto","detalhe":"60% de desconto (de R$ 250,00)","prioridade":2,"preco":100,"criado_em":"2026-10-18T20:42:38.848Z","enviado_em":null}
+{"id":1,"oferta_id":3,"motivo":"desconto","detalhe":"60% de desconto (de R$ 1.599,00)","prioridade":2,"preco":640,"criado_em":"2026-10-18T20:42:38.843Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":2,"oferta_id":24,"motivo":"desconto","detalhe":"60% de desconto (de R$ 250,00)","prioridade":2,"preco":100,"criado_em":"2026-10-18T20:42:38.848Z","enviado_em":"2026-10-18T20:51:21.222Z"}
 {"id":3,"oferta_id":80,"motivo":"quente","detalhe":"642° no Pelando","prioridade":1,"preco":1377,"criado_em":"2026-10-18T20:42:38.855Z","enviado_em":null}
-{"id":4,"oferta_id":148,"motivo":"desconto","detalhe":"61% de desconto (de R$ 488,62)","prioridade":2,"preco":189.99,"criado_em":"2026-10-18T20:42:38.863Z","enviado_em":null}
-{"id":5,"oferta_id":157,"motivo":"desconto","detalhe":"61% de desconto (de R$ 1.777,77)","prioridade":2,"preco":699.99,"criado_em":"2026-10-18T20:42:38.870Z","enviado_em":null}
-{"id":6,"oferta_id":180,"motivo":"desconto","detalhe":"64% de desconto (de R$ 222,21)","prioridade":2,"preco":79.99,"criado_em":"2026-10-18T20:42:38.878Z","enviado_em":null}
-{"id":7,"oferta_id":202,"motivo":"vigia:ssd 2tb nvme","detalhe":"49% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1412,"criado_em":"2026-10-18T20:42:38.884Z","enviado_em":null}
-{"id":8,"oferta_id":203,"motivo":"vigia:ssd 2tb nvme","detalhe":"35% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1788,"criado_em":"2026-10-18T20:42:38.892Z","enviado_em":null}
-{"id":9,"oferta_id":211,"motivo":"vigia:ssd 2tb nvme","detalhe":"37% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1740.9,"criado_em":"2026-10-18T20:42:38.897Z","enviado_em":null}
-{"id":10,"oferta_id":219,"motivo":"vigia:ssd 2tb nvme","detalhe":"31% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1905.13,"criado_em":"2026-10-18T20:42:38.903Z","enviado_em":null}
-{"id":11,"oferta_id":220,"motivo":"vigia:ssd 2tb nvme","detalhe":"38% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1699,"criado_em":"2026-10-18T20:42:38.927Z","enviado_em":null}
-{"id":12,"oferta_id":227,"motivo":"vigia:air fryer -forno","detalhe":"54% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":145,"criado_em":"2026-10-18T20:42:38.935Z","enviado_em":null}
-{"id":13,"oferta_id":232,"motivo":"vigia:air fryer -forno","detalhe":"41% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":188.51,"criado_em":"2026-10-18T20:42:38.943Z","enviado_em":null}
-{"id":14,"oferta_id":236,"motivo":"desconto","detalhe":"68% de desconto (de R$ 1.799,90)","prioridade":2,"preco":573,"criado_em":"2026-10-18T20:42:38.947Z","enviado_em":null}
-{"id":15,"oferta_id":244,"motivo":"vigia:air fryer -forno","detalhe":"54% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":145,"criado_em":"2026-10-18T20:42:38.953Z","enviado_em":null}
+{"id":4,"oferta_id":148,"motivo":"desconto","detalhe":"61% de desconto (de R$ 488,62)","prioridade":2,"preco":189.99,"criado_em":"2026-10-18T20:42:38.863Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":5,"oferta_id":157,"motivo":"desconto","detalhe":"61% de desconto (de R$ 1.777,77)","prioridade":2,"preco":699.99,"criado_em":"2026-10-18T20:42:38.870Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":6,"oferta_id":180,"motivo":"desconto","detalhe":"64% de desconto (de R$ 222,21)","prioridade":2,"preco":79.99,"criado_em":"2026-10-18T20:42:38.878Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":7,"oferta_id":202,"motivo":"vigia:ssd 2tb nvme","detalhe":"49% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1412,"criado_em":"2026-10-18T20:42:38.884Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":8,"oferta_id":203,"motivo":"vigia:ssd 2tb nvme","detalhe":"35% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1788,"criado_em":"2026-10-18T20:42:38.892Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":9,"oferta_id":211,"motivo":"vigia:ssd 2tb nvme","detalhe":"37% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1740.9,"criado_em":"2026-10-18T20:42:38.897Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":10,"oferta_id":219,"motivo":"vigia:ssd 2tb nvme","detalhe":"31% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1905.13,"criado_em":"2026-10-18T20:42:38.903Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":11,"oferta_id":220,"motivo":"vigia:ssd 2tb nvme","detalhe":"38% abaixo da mediana (R$ 2.748,98) de 21 ofertas","prioridade":3,"preco":1699,"criado_em":"2026-10-18T20:42:38.927Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":12,"oferta_id":227,"motivo":"vigia:air fryer -forno","detalhe":"54% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":145,"criado_em":"2026-10-18T20:42:38.935Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":13,"oferta_id":232,"motivo":"vigia:air fryer -forno","detalhe":"41% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":188.51,"criado_em":"2026-10-18T20:42:38.943Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":14,"oferta_id":236,"motivo":"desconto","detalhe":"68% de desconto (de R$ 1.799,90)","prioridade":2,"preco":573,"criado_em":"2026-10-18T20:42:38.947Z","enviado_em":"2026-10-18T20:51:21.222Z"}
+{"id":15,"oferta_id":244,"motivo":"vigia:air fryer -forno","detalhe":"54% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":145,"criado_em":"2026-10-18T20:42:38.953Z","enviado_em":"2026-10-18T20:51:21.222Z"}
 {"id":16,"oferta_id":246,"motivo":"quente","detalhe":"509° no Pelando","prioridade":1,"preco":530,"criado_em":"2026-10-18T20:42:38.960Z","enviado_em":null}
-{"id":17,"oferta_id":257,"motivo":"vigia:air fryer -forno","detalhe":"37% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":199,"criado_em":"2026-10-18T20:42:38.966Z","enviado_em":null}
+{"id":17,"oferta_id":257,"motivo":"vigia:air fryer -forno","detalhe":"37% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":199,"criado_em":"2026-10-18T20:42:38.966Z","enviado_em":"2026-10-18T20:51:21.222Z"}
