@@ -1,0 +1,35 @@
+{
+  "name": "radar-ofertas",
+  "version": "0.1.0",
+  "description": "Varre sites de ofertas brasileiros, guarda histórico de preços e avisa no Telegram quando um produto está anormalmente barato.",
+  "type": "module",
+  "main": "src/cli.js",
+  "bin": {
+    "radar": "src/cli.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "varrer": "node src/cli.js varrer",
+    "buscar": "node src/cli.js buscar",
+    "loop": "node src/cli.js loop",
+    "site": "node src/cli.js site",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ofertas",
+    "promoções",
+    "price-tracker",
+    "pelando",
+    "promobit",
+    "gatry",
+    "kabum",
+    "telegram"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "yaml": "^2.6.0"
+  }
+}

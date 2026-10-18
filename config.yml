@@ -1,0 +1,29 @@
+# Configuração do radar. Tudo aqui tem padrão sensato; apague o que não quiser mudar.
+# Segredos (token do Telegram etc.) NÃO ficam aqui: vão em .env (local) ou Secrets (GitHub Actions).
+
+fontes:
+  pelando:  { ativo: true, paginas: 2 }   # 20 ofertas por página
+  promobit: { ativo: true, paginas: 2 }   # ~50 ofertas por página
+  gatry:    { ativo: true, paginas: 2 }   # ~10 ofertas por página
+  kabum:    { ativo: true, paginas: 1 }   # produtos populares em campanha (100 por página)
+
+# Além da varredura geral, procura cada vigia diretamente nas fontes (busca ativa).
+busca_ativa: true
+busca_ativa_max: 15        # máximo de vigias pesquisadas por execução
+
+regras:
+  desconto_minimo_pct: 60  # "desconto": desconto declarado pela fonte >= 60%
+  temperatura_quente: 500  # "quente": Pelando com >= 500° (comunidade validou)
+  curtidas_quente: 30      # "quente": Promobit com >= 30 curtidas
+  queda_historica: 0.75    # "historico"/"vigia": preço <= 75% da mediana anterior
+  amostras_minimas: 3      # vigia só compara com histórico a partir de 3 ofertas vistas
+  janela_dias: 60          # histórico considerado nas comparações
+  preco_minimo: 20         # ignora bugigangas abaixo disso nos alertas globais
+  alertas_globais: true    # false = só alertas de vigias (menos barulho)
+
+retencao_dias: 90          # ofertas mais antigas que isso são apagadas do banco
+
+notificacoes:
+  telegram: { ativo: true }          # precisa de TELEGRAM_BOT_TOKEN e TELEGRAM_CHAT_ID
+  ntfy: { ativo: false, topico: "" } # ou defina NTFY_TOPICO no ambiente
+  max_por_execucao: 15               # alertas por varredura; o resto fica para a próxima

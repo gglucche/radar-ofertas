@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar de Ofertas</title>
+<meta name="description" content="Alertas e ofertas recentes coletadas pelo radar-ofertas.">
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e4e4e4; --acc:#c8102e; --chip:#eee; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#121212; --fg:#eaeaea; --muted:#9a9a9a; --card:#1c1c1c; --line:#2c2c2c; --acc:#ff5a6e; --chip:#2a2a2a; } }
+  :root[data-theme="dark"] { --bg:#121212; --fg:#eaeaea; --muted:#9a9a9a; --card:#1c1c1c; --line:#2c2c2c; --acc:#ff5a6e; --chip:#2a2a2a; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  main { max-width:960px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:22px; margin:0 0 4px } h2 { font-size:17px; margin:28px 0 10px }
+  .muted { color:var(--muted); font-size:13px }
+  .barra { display:flex; gap:8px; flex-wrap:wrap; margin:16px 0; align-items:center }
+  input[type=search] { flex:1 1 240px; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); font-size:15px }
+  .chip { padding:6px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--line); cursor:pointer; font-size:13px; user-select:none }
+  .chip.on { background:var(--acc); color:#fff; border-color:var(--acc) }
+  .lista { display:grid; gap:10px }
+  .item { display:grid; grid-template-columns:64px 1fr; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px }
+  .item img { width:64px; height:64px; object-fit:contain; border-radius:6px; background:#fff }
+  .item .sem { width:64px; height:64px; border-radius:6px; background:var(--chip) }
+  .t { font-weight:600; text-decoration:none; color:var(--fg) } .t:hover { text-decoration:underline }
+  .p { font-weight:700; font-size:17px } .p s { color:var(--muted); font-weight:400; font-size:13px; margin-left:6px }
+  .m { color:var(--muted); font-size:13px }
+  .tag { display:inline-block; font-size:12px; padding:2px 7px; border-radius:6px; background:var(--chip); margin-right:4px }
+  .tag.vigia { background:var(--acc); color:#fff }
+  .vazio { color:var(--muted); padding:16px; text-align:center }
+</style>
+</head>
+<body>
+<main>
+  <h1>📡 Radar de Ofertas</h1>
+  <div class="muted" id="status">carregando…</div>
+
+  <div class="barra">
+    <input type="search" id="q" placeholder="filtrar por produto (ex.: rtx 4070)" autocomplete="off">
+    <span class="chip on" data-fonte="">todas</span>
+    <span class="chip" data-fonte="pelando">pelando</span>
+    <span class="chip" data-fonte="promobit">promobit</span>
+    <span class="chip" data-fonte="gatry">gatry</span>
+    <span class="chip" data-fonte="kabum">kabum</span>
+  </div>
+
+  <h2>Alertas (7 dias) <span class="muted" id="n-alertas"></span></h2>
+  <div class="lista" id="alertas"></div>
+
+  <h2>Vigias</h2>
+  <div class="muted" id="vigias"></div>
+
+  <h2>Ofertas recentes <span class="muted" id="n-ofertas"></span></h2>
+  <div class="lista" id="ofertas"></div>
+</main>
+<script>
+(async () => {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  const brl = (v) => v == null ? 'sem preço' : 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const ha = (iso) => { const m = Math.round((Date.now() - new Date(iso)) / 60000); return m < 60 ? `${m} min` : m < 1440 ? `${Math.round(m / 60)} h` : `${Math.round(m / 1440)} d`; };
+  const rotulo = (m) => m.startsWith('vigia:') ? ['vigia', '🎯 ' + m.slice(6)] : ({ historico: ['', '📉 queda de preço'], desconto: ['', '💸 desconto alto'], quente: ['', '🔥 em alta'] }[m] || ['', m]);
+
+  let dados;
+  try {
+    dados = await (await fetch('dados.json', { cache: 'no-store' })).json();
+  } catch (e) {
+    $('#status').textContent = 'dados.json ainda não foi gerado (rode uma varredura).';
+    return;
+  }
+  const s = dados.estatisticas || {};
+  $('#status').textContent = `atualizado há ${ha(dados.gerado_em)} · ${s.ofertas ?? 0} ofertas no banco · ${s.alertas ?? 0} alertas`;
+  $('#vigias').innerHTML = (dados.vigias || []).map((v) => `<span class="tag">${esc(v.chave)}${v.preco_max != null ? ' ≤ ' + brl(v.preco_max) : ''}</span>`).join(' ') || 'nenhuma';
+
+  let fonte = '', q = '';
+  const card = (o, extra = '') => `<div class="item">
+      ${o.imagem ? `<img loading="lazy" src="${esc(o.imagem)}" alt="">` : '<div class="sem"></div>'}
+      <div>
+        <div>${extra}<a class="t" href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.titulo)}</a></div>
+        <div class="p">${brl(o.preco)}${o.preco_antigo > o.preco ? `<s>${brl(o.preco_antigo)}</s>` : ''}${o.desconto_pct ? ` <span class="tag">-${Math.round(o.desconto_pct)}%</span>` : ''}</div>
+        <div class="m">${esc(o.loja || '')} · ${o.fonte} · ${ha(o.criado_em || o.atualizado_em)}${o.detalhe ? ' · ' + esc(o.detalhe) : ''}</div>
+      </div></div>`;
+
+  function render() {
+    const ok = (o) => (!fonte || o.fonte === fonte) && (!q || norm(o.titulo).includes(q));
+    const al = (dados.alertas || []).filter(ok);
+    const of = (dados.ofertas || []).filter(ok);
+    $('#n-alertas').textContent = `(${al.length})`;
+    $('#n-ofertas').textContent = `(${of.length})`;
+    $('#alertas').innerHTML = al.map((a) => { const [cls, txt] = rotulo(a.motivo); return card(a, `<span class="tag ${cls}">${esc(txt)}</span>`); }).join('') || '<div class="vazio">nenhum alerta</div>';
+    $('#ofertas').innerHTML = of.slice(0, 200).map((o) => card(o)).join('') || '<div class="vazio">nada encontrado</div>';
+  }
+  $('#q').addEventListener('input', (e) => { q = norm(e.target.value); render(); });
+  document.querySelectorAll('.chip').forEach((c) => c.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach((x) => x.classList.remove('on'));
+    c.classList.add('on'); fonte = c.dataset.fonte; render();
+  }));
+  render();
+})();
+</script>
+</body>
+</html>

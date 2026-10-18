@@ -1,0 +1,9 @@
+node_modules/
+.env
+# cache SQLite local; o que vai para o git são os data/*.jsonl
+data/*.db
+*.db-journal
+*.db-wal
+*.db-shm
+npm-debug.log*
+.DS_Store

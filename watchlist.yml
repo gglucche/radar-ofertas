@@ -1,0 +1,20 @@
+# Produtos vigiados. Edite, faça commit e a próxima varredura já usa.
+# (Também dá para criar vigias pelo Telegram com /vigiar; essas ficam no banco.)
+#
+#   termos:    todas as palavras/frases precisam aparecer no título
+#              (sem distinção de maiúsculas e acentos; "rtx 4070" casa "RTX-4070")
+#   excluir:   nenhuma dessas pode aparecer
+#   preco_max: avisa quando o preço for <= esse valor
+#              sem preco_max: avisa quando ficar bem abaixo da mediana histórica da vigia
+#              ou bater novo mínimo (precisa de algumas ofertas vistas antes)
+
+vigias:
+  - termos: [rtx 4070]
+    excluir: [notebook, pc gamer]
+    preco_max: 3000
+
+  - termos: [ssd, 2tb, nvme]
+    preco_max: 600
+
+  - termos: [air fryer]
+    excluir: [forno]
