@@ -1,6 +1,6 @@
 {"id":1,"oferta_id":3,"motivo":"desconto","detalhe":"60% de desconto (de R$ 1.599,00)","prioridade":2,"preco":640,"criado_em":"2026-10-18T20:42:38.843Z","enviado_em":"2026-10-18T21:00:37.241Z"}
 {"id":2,"oferta_id":24,"motivo":"desconto","detalhe":"60% de desconto (de R$ 250,00)","prioridade":2,"preco":100,"criado_em":"2026-10-18T20:42:38.848Z","enviado_em":"2026-10-18T21:00:37.241Z"}
-{"id":3,"oferta_id":80,"motivo":"quente","detalhe":"642° no Pelando","prioridade":1,"preco":1377,"criado_em":"2026-10-18T20:42:38.855Z","enviado_em":null}
+{"id":3,"oferta_id":80,"motivo":"quente","detalhe":"642° no Pelando","prioridade":1,"preco":1377,"criado_em":"2026-10-18T20:42:38.855Z","enviado_em":"2026-10-18T21:03:37.218Z"}
 {"id":4,"oferta_id":148,"motivo":"desconto","detalhe":"61% de desconto (de R$ 488,62)","prioridade":2,"preco":189.99,"criado_em":"2026-10-18T20:42:38.863Z","enviado_em":"2026-10-18T21:00:37.241Z"}
 {"id":5,"oferta_id":157,"motivo":"desconto","detalhe":"61% de desconto (de R$ 1.777,77)","prioridade":2,"preco":699.99,"criado_em":"2026-10-18T20:42:38.870Z","enviado_em":"2026-10-18T21:00:37.241Z"}
 {"id":6,"oferta_id":180,"motivo":"desconto","detalhe":"64% de desconto (de R$ 222,21)","prioridade":2,"preco":79.99,"criado_em":"2026-10-18T20:42:38.878Z","enviado_em":"2026-10-18T21:00:37.241Z"}
@@ -13,5 +13,5 @@
 {"id":13,"oferta_id":232,"motivo":"vigia:air fryer -forno","detalhe":"41% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":188.51,"criado_em":"2026-10-18T20:42:38.943Z","enviado_em":"2026-10-18T21:00:37.241Z"}
 {"id":14,"oferta_id":236,"motivo":"desconto","detalhe":"68% de desconto (de R$ 1.799,90)","prioridade":2,"preco":573,"criado_em":"2026-10-18T20:42:38.947Z","enviado_em":"2026-10-18T21:00:37.241Z"}
 {"id":15,"oferta_id":244,"motivo":"vigia:air fryer -forno","detalhe":"54% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":145,"criado_em":"2026-10-18T20:42:38.953Z","enviado_em":"2026-10-18T21:00:37.241Z"}
-{"id":16,"oferta_id":246,"motivo":"quente","detalhe":"509° no Pelando","prioridade":1,"preco":530,"criado_em":"2026-10-18T20:42:38.960Z","enviado_em":null}
+{"id":16,"oferta_id":246,"motivo":"quente","detalhe":"509° no Pelando","prioridade":1,"preco":530,"criado_em":"2026-10-18T20:42:38.960Z","enviado_em":"2026-10-18T21:03:37.218Z"}
 {"id":17,"oferta_id":257,"motivo":"vigia:air fryer -forno","detalhe":"37% abaixo da mediana (R$ 318,21) de 26 ofertas","prioridade":3,"preco":199,"criado_em":"2026-10-18T20:42:38.966Z","enviado_em":"2026-10-18T21:00:37.241Z"}
