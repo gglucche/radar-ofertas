@@ -2,6 +2,7 @@
 # Segredos (token do Telegram etc.) NÃO ficam aqui: vão em .env (local) ou Secrets (GitHub Actions).
 
 fontes:
+  # Pelando funciona local/VPS; no GitHub Actions o Cloudflare bloqueia (403) e a fonte só é pulada.
   pelando:  { ativo: true, paginas: 2 }   # 20 ofertas por página
   promobit: { ativo: true, paginas: 2 }   # ~50 ofertas por página
   gatry:    { ativo: true, paginas: 2 }   # ~10 ofertas por página

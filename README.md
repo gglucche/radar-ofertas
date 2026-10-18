@@ -51,6 +51,7 @@ Cada oferta gera no máximo um alerta por motivo. Alertas globais ignoram itens 
 4. **Settings → Actions → General**: permita que workflows rodem e, em *Workflow permissions*, marque **Read and write permissions** (o workflow faz commit do banco).
 5. Aba **Actions → varrer → Run workflow** para a primeira execução. Depois disso roda sozinho a cada 30 minutos.
 6. (Opcional) **Settings → Pages → Source: Deploy from a branch → `main` / `/docs`** para ter a página de alertas e busca.
+7. Deu algo errado com alguma fonte? Aba **Actions → diagnostico → Run workflow** mostra o que cada site responde a partir do runner.
 
 Repositório público = minutos de Actions ilimitados. Em repositório privado, 48 execuções/dia de ~1 min cabem nos 2.000 min/mês grátis, mas fique de olho.
 
@@ -146,6 +147,8 @@ A ideia aqui foi combinar o que esses fazem de bom (agregadores brasileiros, Tel
 
 ## Limitações conhecidas
 
+- **Pelando bloqueia o GitHub Actions**: o site inteiro (inclusive a API e o sitemap) fica atrás do desafio do Cloudflare para IPs de datacenter fora do Brasil, então no Actions a fonte falha com `HTTP 403 (cloudflare challenge)` e as outras seguem normalmente. Rodando local ou numa VPS brasileira o Pelando funciona. Para silenciar o aviso no Actions, ponha `pelando: { ativo: false }` em `config.yml`.
+- **Gatry e DNS**: os servidores DNS do gatry.com (UOL) não respondem a resolvedores fora do Brasil. O workflow contorna isso resolvendo o load balancer da AWS e escrevendo em `/etc/hosts` (passo "DNS alternativo"). Se o Gatry mudar de infraestrutura, ajuste `GATRY_CNAME` no workflow.
 - Mercado Livre e Amazon não são lidos diretamente (a API do ML exige token e a Amazon bloqueia robôs), mas as ofertas deles aparecem via Pelando/Promobit/Gatry.
 - Hardmob está atrás de desafio do Cloudflare; não foi incluído.
 - Os sites podem mudar o HTML/API a qualquer momento. Cada fonte falha de forma isolada e o resto da varredura continua; os erros aparecem no log do workflow.

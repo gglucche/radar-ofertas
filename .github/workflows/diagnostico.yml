@@ -14,6 +14,14 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --no-audit --no-fund
+      - name: DNS alternativo para gatry.com
+        env:
+          GATRY_CNAME: Gatry-Load-Balancer-186380728.us-east-1.elb.amazonaws.com
+        run: |
+          if ! getent hosts gatry.com >/dev/null; then
+            IP=$(dig +short "$GATRY_CNAME" @1.1.1.1 | grep -E '^[0-9.]+$' | head -1)
+            if [ -n "$IP" ]; then echo "$IP gatry.com" | sudo tee -a /etc/hosts; else echo "não resolveu $GATRY_CNAME"; fi
+          fi
       - name: Fontes via Node (mesmo código da varredura)
         run: node src/cli.js diagnostico
       - name: Fontes via curl (status, IP, cabeçalhos)

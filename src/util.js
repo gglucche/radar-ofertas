@@ -54,11 +54,14 @@ export async function baixar(url, { tipo = 'text', tentativas = 2, timeoutMs = 2
       });
       if (!res.ok) {
         const mit = res.headers.get('cf-mitigated');
-        throw new Error(`HTTP ${res.status}${mit ? ` (cloudflare ${mit})` : ''} em ${url}`);
+        const e = new Error(`HTTP ${res.status}${mit ? ` (cloudflare ${mit})` : ''} em ${url}`);
+        e.definitivo = Boolean(mit) || res.status === 404; // desafio do Cloudflare: repetir não adianta
+        throw e;
       }
       return tipo === 'json' ? await res.json() : await res.text();
     } catch (e) {
       erro = e.name === 'AbortError' ? new Error(`timeout de ${timeoutMs}ms em ${url}`) : new Error(descreverErro(e).includes(url) ? descreverErro(e) : `${descreverErro(e)} em ${url}`);
+      if (e.definitivo) break;
       if (i + 1 < tentativas) await dormir(800 * (i + 1));
     } finally {
       clearTimeout(timer);
