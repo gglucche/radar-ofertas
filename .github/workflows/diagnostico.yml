@@ -25,3 +25,14 @@ jobs:
             grep -iE "^(server|cf-ray|cf-mitigated|location|content-type):" /tmp/h || true
             head -c 200 /tmp/b | tr '\n' ' '; echo
           done
+      - name: DNS do gatry.com e API do Pelando
+        run: |
+          echo "== resolvedor padrao"; dig +short gatry.com || true
+          echo "== 1.1.1.1"; dig +short gatry.com @1.1.1.1 || true
+          echo "== 8.8.8.8"; dig +short gatry.com @8.8.8.8 || true
+          echo "== NS"; dig +short NS gatry.com @1.1.1.1 || true
+          echo "== DoH"; curl -s -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=gatry.com&type=A' | head -c 300; echo
+          IP=$(dig +short gatry.com @1.1.1.1 | head -1)
+          if [ -n "$IP" ]; then echo "== gatry via --resolve $IP"; curl -sS -o /tmp/g -w "http %{http_code} bytes %{size_download}\n" --resolve "gatry.com:443:$IP" --max-time 30 "https://gatry.com/promocoes" || echo "curl falhou: $?"; fi
+          echo "== api-web.pelando"; curl -sS -D - -o /tmp/p -w "http %{http_code}\n" --max-time 30 "https://api-web.pelando.com.br/" | grep -iE "^(http|server|cf-mitigated|content-type)" ; head -c 200 /tmp/p; echo
+          echo "== pelando sitemap"; curl -sS -o /tmp/s -w "http %{http_code} bytes %{size_download}\n" --max-time 30 "https://www.pelando.com.br/sitemap.xml" || true
