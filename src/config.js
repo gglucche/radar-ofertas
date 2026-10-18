@@ -63,6 +63,9 @@ export function carregarConfig() {
   cfg.dados = process.env.RADAR_DADOS || path.join(RAIZ, 'data'); // JSONL versionados no git
   cfg.banco = process.env.RADAR_DB || path.join(cfg.dados, 'ofertas.db'); // cache SQLite (ignorado pelo git)
   cfg.docs = path.join(RAIZ, 'docs');
+  // Só o runner (efêmero) precisa exportar JSONL/dados.json a cada execução. Local e Docker
+  // guardam estado no próprio SQLite; exportar ali sobrescreveria o histórico mais novo do bot.
+  cfg.exportar = process.env.GITHUB_ACTIONS === 'true' || process.env.RADAR_EXPORTAR === '1';
   return cfg;
 }
 

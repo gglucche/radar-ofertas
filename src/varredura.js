@@ -67,7 +67,7 @@ export async function executarVarredura({ config, db, tg, notificar = true }) {
   }
 
   resumo.podadas = podar(db, config.retencao_dias);
-  exportarSite(db, config);
+  if (config.exportar) exportarSite(db, config);
   resumo.segundos = Math.round((Date.now() - inicio) / 1000);
   log(`varredura: ${JSON.stringify(resumo)}`);
   return resumo;

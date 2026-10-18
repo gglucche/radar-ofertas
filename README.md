@@ -16,7 +16,9 @@ GitHub Actions (cron a cada 30 min)
        7. exporta data/*.jsonl e docs/dados.json e faz commit no repositório
 ```
 
-O histórico vive dentro do repositório (padrão *git scraping*): cada varredura faz commit de `data/*.jsonl` (um arquivo por tabela, um registro por linha) e de `docs/dados.json`. O SQLite é só um cache local, reconstruído a partir dos JSONL quando o runner começa vazio. Nada de servidor, nada de banco externo, custo zero, e como é texto os diffs no git ficam pequenos.
+O histórico vive dentro do repositório (padrão *git scraping*): cada varredura no Actions faz commit de `data/*.jsonl` (um arquivo por tabela, um registro por linha) e de `docs/dados.json`. O SQLite é só um cache local, reconstruído a partir dos JSONL quando o runner começa vazio. Nada de servidor, nada de banco externo, custo zero, e como é texto os diffs no git ficam pequenos.
+
+Rodando local ou em Docker o estado fica só no SQLite (`data/ofertas.db`, ignorado pelo git); os JSONL não são reescritos, para não sobrescrever o histórico mais novo do bot quando você fizer commit. Para forçar, use `--exportar`.
 
 ### Fontes
 

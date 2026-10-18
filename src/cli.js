@@ -14,6 +14,7 @@ import { FONTES } from './sources/index.js';
 const AJUDA = `radar-ofertas — varre sites de ofertas e avisa quando algo está anormalmente barato
 
   varrer [--sem-notificar]       uma varredura completa (padrão)
+         [--exportar]            também grava data/*.jsonl e docs/dados.json (automático no GitHub Actions)
   buscar <produto> [--notificar] busca agora nas fontes + histórico
   vigiar <produto> [-excluir] [preço máx]   ex.: vigiar rtx 4070 -notebook 3000
   parar <id>                     remove vigia criada por CLI/Telegram
@@ -29,6 +30,7 @@ const [cmd = 'varrer', ...args] = process.argv.slice(2);
 const flags = new Set(args.filter((a) => a.startsWith('--')));
 const posic = args.filter((a) => !a.startsWith('--'));
 const config = carregarConfig();
+if (flags.has('--exportar')) config.exportar = true;
 const db = abrirBanco(config.banco);
 const importados = importarSeVazio(db, config.dados);
 if (importados) log(`banco recarregado de ${config.dados} (${importados} registros)`);
@@ -72,7 +74,7 @@ try {
       for (;;) {
         try {
           await executarVarredura({ config, db, tg });
-          exportarDados(db, config.dados);
+          if (config.exportar) exportarDados(db, config.dados);
         } catch (e) {
           log('⚠️ varredura falhou:', e.message);
         }
@@ -113,6 +115,6 @@ try {
   console.error('erro:', e.message);
   process.exitCode = 1;
 } finally {
-  exportarDados(db, config.dados);
+  if (config.exportar) exportarDados(db, config.dados);
   db.close();
 }
