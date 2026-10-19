@@ -51,3 +51,5 @@
 {"id":51,"oferta_id":145,"motivo":"historico","detalhe":"caiu 33% (antes R$ 1.199,99)","prioridade":2,"preco":799.99,"criado_em":"2026-10-19T11:38:25.929Z","enviado_em":"2026-10-19T11:38:25.934Z"}
 {"id":52,"oferta_id":146,"motivo":"historico","detalhe":"caiu 31% (antes R$ 1.099,99)","prioridade":2,"preco":759.99,"criado_em":"2026-10-19T11:38:25.931Z","enviado_em":"2026-10-19T11:38:25.934Z"}
 {"id":53,"oferta_id":164,"motivo":"historico","detalhe":"caiu 28% (antes R$ 4.703,04)","prioridade":2,"preco":3399.99,"criado_em":"2026-10-19T11:38:25.932Z","enviado_em":"2026-10-19T11:38:25.934Z"}
+{"id":54,"oferta_id":628,"motivo":"desconto","detalhe":"74% de desconto (de R$ 115,00)","prioridade":2,"preco":29.9,"criado_em":"2026-10-19T12:13:29.463Z","enviado_em":"2026-10-19T12:13:29.466Z"}
+{"id":55,"oferta_id":636,"motivo":"desconto","detalhe":"70% de desconto (de R$ 165,00)","prioridade":2,"preco":49,"criado_em":"2026-10-19T12:13:29.464Z","enviado_em":"2026-10-19T12:13:29.466Z"}
