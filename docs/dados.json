@@ -1,6 +1,6 @@
 {
-"gerado_em": "2026-10-23T07:14:01.727Z",
-"estatisticas": {"ofertas":4614,"precos":4401,"alertas":435,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-10-23T07:14:01.599Z"},
+"gerado_em": "2026-10-23T07:42:04.896Z",
+"estatisticas": {"ofertas":4614,"precos":4401,"alertas":435,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-10-23T07:42:04.843Z"},
 "vigias": [{"id":null,"chave":"rtx 4070 -notebook -pc gamer","preco_max":3000},{"id":null,"chave":"ssd 2tb nvme","preco_max":600},{"id":null,"chave":"air fryer -forno","preco_max":null}],
 "alertas": [
   {"id":435,"motivo":"vigia:air fryer -forno","detalhe":"50% abaixo da mediana (R$ 314,14) de 46 ofertas","prioridade":3,"criado_em":"2026-10-23T07:14:01.719Z","enviado_em":"2026-10-23T07:14:01.722Z","fonte":"promobit","titulo":"Air Fryer Fritadeira Elétrica Elgin Start Fry 3,5l Cor Preto","preco":156,"preco_antigo":249.9,"desconto_pct":38,"loja":"Mercado Livre","url":"https://www.promobit.com.br/oferta/air-fryer-fritadeira-eletrica-elgin-start-fry-35l-cor-preto-3136154/","imagem":"https://www.promobit.com.br/652155749117927278293654545499.png"},
