@@ -1,6 +1,6 @@
 {
-"gerado_em": "2026-10-25T07:09:29.569Z",
-"estatisticas": {"ofertas":6110,"precos":5786,"alertas":566,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-10-25T06:48:37.573Z"},
+"gerado_em": "2026-10-25T07:38:10.326Z",
+"estatisticas": {"ofertas":6110,"precos":5786,"alertas":566,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-10-25T07:38:10.284Z"},
 "vigias": [{"id":null,"chave":"rtx 4070 -notebook -pc gamer","preco_max":3000},{"id":null,"chave":"ssd 2tb nvme","preco_max":600},{"id":null,"chave":"air fryer -forno","preco_max":null}],
 "alertas": [
   {"id":566,"motivo":"desconto","detalhe":"60% de desconto (de R$ 125,00)","prioridade":2,"criado_em":"2026-10-25T02:12:35.615Z","enviado_em":"2026-10-25T02:12:35.618Z","fonte":"promobit","titulo":"Natura Chronos Derma- Multiprotetor Clareador Fps 70 - Cor 1","preco":50,"preco_antigo":125,"desconto_pct":60,"loja":"Mercado Livre","url":"https://www.promobit.com.br/oferta/natura-chronos-derma-multiprotetor-clareador-fps-70-cor-1-3140637/","imagem":"https://www.promobit.com.br/885827725317928871472921727658.png"},
