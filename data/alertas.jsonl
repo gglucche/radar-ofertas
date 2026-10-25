@@ -554,3 +554,6 @@
 {"id":554,"oferta_id":5957,"motivo":"desconto","detalhe":"63% de desconto (de R$ 229,99)","prioridade":2,"preco":86,"criado_em":"2026-10-24T22:07:18.595Z","enviado_em":"2026-10-24T22:07:18.598Z"}
 {"id":555,"oferta_id":5989,"motivo":"desconto","detalhe":"65% de desconto (de R$ 199,00)","prioridade":2,"preco":69.2,"criado_em":"2026-10-24T23:06:35.371Z","enviado_em":"2026-10-24T23:06:35.375Z"}
 {"id":556,"oferta_id":6007,"motivo":"desconto","detalhe":"64% de desconto (de R$ 679,80)","prioridade":2,"preco":241.7,"criado_em":"2026-10-24T23:06:35.373Z","enviado_em":"2026-10-24T23:06:35.375Z"}
+{"id":557,"oferta_id":6022,"motivo":"vigia:ssd 2tb nvme","detalhe":"abaixo do teto de R$ 600,00","prioridade":3,"preco":256.21,"criado_em":"2026-10-25T00:22:21.178Z","enviado_em":"2026-10-25T00:22:21.183Z"}
+{"id":558,"oferta_id":6027,"motivo":"desconto","detalhe":"71% de desconto (de R$ 108,04)","prioridade":2,"preco":30.88,"criado_em":"2026-10-25T00:22:21.180Z","enviado_em":"2026-10-25T00:22:21.183Z"}
+{"id":559,"oferta_id":6030,"motivo":"desconto","detalhe":"70% de desconto (de R$ 159,00)","prioridade":2,"preco":47,"criado_em":"2026-10-25T00:22:21.181Z","enviado_em":"2026-10-25T00:22:21.183Z"}
