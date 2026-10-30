@@ -901,3 +901,5 @@
 {"id":901,"oferta_id":3401,"motivo":"quente","detalhe":"30 curtidas no Promobit","prioridade":1,"preco":4299.99,"criado_em":"2026-10-30T08:08:39.983Z","enviado_em":"2026-10-30T08:08:40.258Z"}
 {"id":902,"oferta_id":9103,"motivo":"desconto","detalhe":"69% de desconto (de R$ 189,99)","prioridade":2,"preco":59.84,"criado_em":"2026-10-30T10:33:47.810Z","enviado_em":"2026-10-30T10:33:47.812Z"}
 {"id":903,"oferta_id":9114,"motivo":"desconto","detalhe":"62% de desconto (de R$ 399,99)","prioridade":2,"preco":153.89,"criado_em":"2026-10-30T11:05:07.112Z","enviado_em":"2026-10-30T11:05:07.115Z"}
+{"id":904,"oferta_id":9125,"motivo":"desconto","detalhe":"61% de desconto (de R$ 89,90)","prioridade":2,"preco":35,"criado_em":"2026-10-30T11:34:12.003Z","enviado_em":"2026-10-30T11:34:12.007Z"}
+{"id":905,"oferta_id":9126,"motivo":"desconto","detalhe":"70% de desconto (de R$ 99,00)","prioridade":2,"preco":29.87,"criado_em":"2026-10-30T11:34:12.005Z","enviado_em":"2026-10-30T11:34:12.007Z"}
