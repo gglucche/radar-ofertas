@@ -1,6 +1,6 @@
 {
-"gerado_em": "2026-10-30T08:08:40.265Z",
-"estatisticas": {"ofertas":9098,"precos":8617,"alertas":901,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-10-30T08:08:39.907Z"},
+"gerado_em": "2026-10-30T08:35:56.852Z",
+"estatisticas": {"ofertas":9098,"precos":8617,"alertas":901,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-10-30T08:35:56.770Z"},
 "vigias": [{"id":null,"chave":"rtx 4070 -notebook -pc gamer","preco_max":3000},{"id":null,"chave":"ssd 2tb nvme","preco_max":600},{"id":null,"chave":"air fryer -forno","preco_max":null}],
 "alertas": [
   {"id":901,"motivo":"quente","detalhe":"30 curtidas no Promobit","prioridade":1,"criado_em":"2026-10-30T08:08:39.983Z","enviado_em":"2026-10-30T08:08:40.258Z","fonte":"promobit","titulo":"Smart TV Hisense 65\" Polegadas U7ESG Hi-QLED Mini LED 4K 144Hz","preco":4299.99,"preco_antigo":null,"desconto_pct":null,"loja":"Amazon","url":"https://www.promobit.com.br/oferta/smart-tv-hisense-65-polegadas-u7esg-hi-qled-mini-led-4k-144hz-3132676/","imagem":"https://www.promobit.com.br/878365561317926262482232643365.jpg"},
