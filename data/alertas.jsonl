@@ -1002,3 +1002,6 @@
 {"id":1002,"oferta_id":10004,"motivo":"desconto","detalhe":"73% de desconto (de R$ 139,90)","prioridade":2,"preco":38.39,"criado_em":"2026-10-31T09:06:09.552Z","enviado_em":"2026-10-31T09:06:09.554Z"}
 {"id":1003,"oferta_id":10012,"motivo":"desconto","detalhe":"78% de desconto (de R$ 319,90)","prioridade":2,"preco":71.91,"criado_em":"2026-10-31T10:05:49.242Z","enviado_em":"2026-10-31T10:05:49.246Z"}
 {"id":1004,"oferta_id":10013,"motivo":"desconto","detalhe":"67% de desconto (de R$ 899,90)","prioridade":2,"preco":299,"criado_em":"2026-10-31T10:05:49.243Z","enviado_em":"2026-10-31T10:05:49.246Z"}
+{"id":1005,"oferta_id":10016,"motivo":"desconto","detalhe":"68% de desconto (de R$ 349,99)","prioridade":2,"preco":113.39,"criado_em":"2026-10-31T10:33:40.388Z","enviado_em":"2026-10-31T10:33:40.393Z"}
+{"id":1006,"oferta_id":10018,"motivo":"desconto","detalhe":"60% de desconto (de R$ 399,00)","prioridade":2,"preco":161.19,"criado_em":"2026-10-31T10:33:40.389Z","enviado_em":"2026-10-31T10:33:40.393Z"}
+{"id":1007,"oferta_id":10019,"motivo":"desconto","detalhe":"66% de desconto (de R$ 319,99)","prioridade":2,"preco":107.9,"criado_em":"2026-10-31T10:33:40.390Z","enviado_em":"2026-10-31T10:33:40.393Z"}
