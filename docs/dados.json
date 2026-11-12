@@ -1,6 +1,6 @@
 {
-"gerado_em": "2026-11-12T05:33:41.757Z",
-"estatisticas": {"ofertas":22937,"precos":21776,"alertas":2646,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-12T05:33:41.574Z"},
+"gerado_em": "2026-11-12T06:09:30.590Z",
+"estatisticas": {"ofertas":22937,"precos":21776,"alertas":2646,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-12T06:09:30.399Z"},
 "vigias": [{"id":null,"chave":"rtx 4070 -notebook -pc gamer","preco_max":3000},{"id":null,"chave":"ssd 2tb nvme","preco_max":600},{"id":null,"chave":"air fryer -forno","preco_max":null}],
 "alertas": [
   {"id":2646,"motivo":"desconto","detalhe":"61% de desconto (de R$ 248,99)","prioridade":2,"criado_em":"2026-11-12T05:06:10.585Z","enviado_em":"2026-11-12T05:06:10.588Z","fonte":"promobit","titulo":"Máquina de Macarrão Cilindro Manual Pítia de Aço Inox para Massa Caseira","preco":97.49,"preco_antigo":248.99,"desconto_pct":61,"loja":"Mercado Livre","url":"https://www.promobit.com.br/oferta/maquina-de-macarrao-cilindro-manual-pitia-de-aco-inox-para-massa-caseira-3204628/","imagem":"https://www.promobit.com.br/790278850517944565768027478499.png"},
