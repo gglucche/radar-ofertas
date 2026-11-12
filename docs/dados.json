@@ -1,6 +1,6 @@
 {
-"gerado_em": "2026-11-12T18:33:03.797Z",
-"estatisticas": {"ofertas":23602,"precos":22409,"alertas":2721,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-12T18:33:03.554Z"},
+"gerado_em": "2026-11-12T19:06:14.708Z",
+"estatisticas": {"ofertas":23602,"precos":22411,"alertas":2721,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-12T19:06:14.486Z"},
 "vigias": [{"id":null,"chave":"rtx 4070 -notebook -pc gamer","preco_max":3000},{"id":null,"chave":"ssd 2tb nvme","preco_max":600},{"id":null,"chave":"air fryer -forno","preco_max":null}],
 "alertas": [
   {"id":2721,"motivo":"desconto","detalhe":"79% de desconto (de R$ 1.116,18)","prioridade":2,"criado_em":"2026-11-12T18:33:03.783Z","enviado_em":"2026-11-12T18:33:03.786Z","fonte":"promobit","titulo":"SSD Kootion X15 M.2 NVMe PCIe 256GB 512GB 1TB ou 2TB","preco":230,"preco_antigo":1116.18,"desconto_pct":79,"loja":"Aliexpress","url":"https://www.promobit.com.br/oferta/ssd-kootion-x15-m2-nvme-pcie-256gb-512gb-1tb-ou-2tb-3205903/","imagem":"https://www.promobit.com.br/669441733517944945306943289813.png"},
