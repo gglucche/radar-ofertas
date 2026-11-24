@@ -1,6 +1,6 @@
 {
-"gerado_em": "2026-11-24T05:33:40.678Z",
-"estatisticas": {"ofertas":36482,"precos":34511,"alertas":4213,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-24T05:33:40.364Z"},
+"gerado_em": "2026-11-24T06:09:24.463Z",
+"estatisticas": {"ofertas":36482,"precos":34511,"alertas":4213,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-24T06:09:24.268Z"},
 "vigias": [{"id":null,"chave":"rtx 4070 -notebook -pc gamer","preco_max":3000},{"id":null,"chave":"ssd 2tb nvme","preco_max":600},{"id":null,"chave":"air fryer -forno","preco_max":null}],
 "alertas": [
   {"id":4213,"motivo":"desconto","detalhe":"64% de desconto (de R$ 79,90)","prioridade":2,"criado_em":"2026-11-24T05:05:57.758Z","enviado_em":"2026-11-24T05:05:57.761Z","fonte":"promobit","titulo":"Kit 3 Cuecas Slip Polo Star Cotton 100% Algodão Penteado Masculina Adulto Tradicional","preco":29,"preco_antigo":79.9,"desconto_pct":64,"loja":"Amazon","url":"https://www.promobit.com.br/oferta/kit-3-cuecas-slip-polo-star-cotton-100-algodao-penteado-masculina-adulto-tradicional-3246201/","imagem":"https://www.promobit.com.br/907186209117954912572949401581.jpg"},
