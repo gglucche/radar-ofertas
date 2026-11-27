@@ -1,6 +1,6 @@
 {
-"gerado_em": "2026-11-27T18:33:33.827Z",
-"estatisticas": {"ofertas":42333,"precos":40057,"alertas":5020,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-27T18:33:33.378Z"},
+"gerado_em": "2026-11-27T19:04:30.041Z",
+"estatisticas": {"ofertas":42333,"precos":40058,"alertas":5020,"pendentes":0,"vigias":0,"ultima_atualizacao":"2026-11-27T19:04:29.784Z"},
 "vigias": [{"id":null,"chave":"rtx 4070 -notebook -pc gamer","preco_max":3000},{"id":null,"chave":"ssd 2tb nvme","preco_max":600},{"id":null,"chave":"air fryer -forno","preco_max":null}],
 "alertas": [
   {"id":5020,"motivo":"desconto","detalhe":"66% de desconto (de R$ 3.421,77)","prioridade":2,"criado_em":"2026-11-27T18:33:33.804Z","enviado_em":"2026-11-27T18:33:33.808Z","fonte":"promobit","titulo":"ThundeaL TD98Pro Projetor Full HD 4K 2G 32G Android Smart TV","preco":1159.38,"preco_antigo":3421.77,"desconto_pct":66,"loja":"Aliexpress","url":"https://www.promobit.com.br/oferta/thundeal-td98pro-projetor-full-hd-4k-2g-32g-android-smart-tv-3268468/","imagem":"https://www.promobit.com.br/770691308717958042472321183701.png"},
